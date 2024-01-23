@@ -22,8 +22,27 @@ modules:
           # config directory on ostree. Read more in the files module's README
 
   - type: rpm-ostree
-    repos: # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    repos:  - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
     install:
+    - icewm
+    - emacs
+    - gvfs
+    - thunar
+    - xfce4-screenshooter
+    - network-manager-applet
+    - xautolock
+    - slock
+    - xfce4-power-manager
+    - notification-daemon
+    - polkit-gnome
+    - kcalc
+    - strawberry
+    - mpv
+    - xreader
+    - arandr
+    - blueberry
+    - feh
+    - menumaker
       # - micro
       # - starship
     remove:
@@ -36,17 +55,12 @@ modules:
         # add "!include /usr/share/ublue-os/just/100-bling.just"
         # in your custom.just (added by default) or local justfile
       - nix-installer # shell shortcuts for determinate system's nix installers
-      - ublue-os-wallpapers
-      # - ublue-update # https://github.com/ublue-os/ublue-update
-      # - 1password # install 1Password (stable) and `op` CLI tool
-      # - dconf-update-service # a service unit that updates the dconf db on boot
-      # - devpod # https://devpod.sh/ as an rpm
-      # - gnome-vrr # enables gnome-vrr for your image
-      # - container-tools # installs container-related tools onto /usr/bin: kind, kubectx, docker-compose and kubens
-      # - laptop # installs TLP and configures your system for laptop usage
-      # - flatpaksync # allows synchronization of user-installed flatpaks, see separate documentation section
-
-
+      - ublue-update # https://github.com/ublue-os/ublue-update
+      - container-tools # installs container-related tools onto /usr/bin: kind, kubectx, docker-compose and kubens
+      - laptop # installs TLP and configures your system for laptop usage
+      - flatpaksync # allows synchronization of user-installed flatpaks, see separate documentation section
+      - steam
+      
   - type: yafti
       # if included, yafti and it's dependencies (pip & libadwaita)
       #  will be installed and set up
@@ -54,7 +68,9 @@ modules:
       # this section is optional
       # - Celluloid: io.github.celluloid_player.Celluloid
       # - Krita: org.kde.krita
-
+      - Steam: com.valvesoftware.Steam
+      - Discord: com.discordapp.Discord
+      - Element: im.riot.Riot
   - type: script
     scripts:
       # this sets up the proper policy & signing files for signed images to work
